@@ -113,13 +113,13 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@main
+        uses: snyk/actions/node@master
         continue-on-error: true # To make sure that SARIF upload gets called
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
       - name: Install Snyk CLI
-        uses: snyk/actions/setup@main
+        uses: snyk/actions/setup@master
         with:
           version: latest
         env:
@@ -141,13 +141,13 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@main
+        uses: snyk/actions/node@master
         continue-on-error: true # To make sure that SARIF upload gets called
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
          
       - name: Install Snyk CLI
-        uses: snyk/actions/setup@main
+        uses: snyk/actions/setup@master
         with:
           version: latest
         env:
