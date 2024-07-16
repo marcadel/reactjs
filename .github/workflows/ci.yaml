@@ -226,7 +226,7 @@ jobs:
         docker push ${{ secrets.DOCKER_USERNAME }}/backend-api    
 
     - name: Run Trivy vulnerability scanner
-      uses: aquasecurity/trivy-action@main
+      uses: aquasecurity/trivy-action@master
       with:
         image-ref: 'docker.io/${{ secrets.DOCKER_USERNAME }}/backend-api'
         format: 'sarif'
@@ -234,7 +234,7 @@ jobs:
         severity: 'CRITICAL,HIGH' 
         
     - name: Install Snyk CLI
-      uses: snyk/actions/setup@main
+      uses: snyk/actions/setup@master
       with:
         snyk-token: ${{ secrets.SNYK_TOKEN }}
      
@@ -246,7 +246,7 @@ jobs:
       working-directory: ./backend
 
     - name: Run Snyk to check for vulnerabilities in the Docker image
-      uses: snyk/actions/docker@main
+      uses: snyk/actions/docker@master
       with:
         image: ${{ secrets.DOCKER_USERNAME }}/backend-api
         args: --file=backend/Dockerfile --severity-threshold=high
