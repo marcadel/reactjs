@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ogochukwuozotta/frontend-js:latest
+        image: markbotros/frontend-js:latest
         env:
         - name: VITE_REACT_APP_API_URL
           value: "http://k8s-quiz-mainlb-2249bc743a-105138016.us-east-1.elb.amazonaws.com/api/questions"
